@@ -1,5 +1,6 @@
 (ns pi-server.server
-  (:require [compojure.api.sweet :as sweet]
+  (:require [clojure.logging :as log]
+            [compojure.api.sweet :as sweet]
             [compojure.api.core :as api]
             [compojure.route :as route]
             [ring.util.response :as resp]
@@ -37,6 +38,7 @@
 (defn -main [& [port]]
   (let [my-app (build-app)
         port (Integer. ^int (or port (env :port) 5001))]
+    (log/info (str "port: " port))
     (server/run-server my-app {:port port
                                :join? false
                                :max-line 131072})))
