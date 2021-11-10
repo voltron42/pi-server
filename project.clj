@@ -17,7 +17,7 @@
   :plugins [[environ/environ.lein "0.3.1"]
             [lein-ancient "0.6.15"]]
   :hooks [environ.leiningen.hooks]
-  :uberjar-name "carabiner.jar"
+  :uberjar-name "pi-server.jar"
   :resource-paths ["resources"]
   :profiles {:production {:env {:production true}
                           :resource-paths ["resources"]}})
